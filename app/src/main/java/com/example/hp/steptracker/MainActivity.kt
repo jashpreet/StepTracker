@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() , SensorEventListener {
         super.onStart()
        val stepCounter= sensorManager.getDefaultSensor(Sensor.TYPE_STEP_DETECTOR)
 
-        sensorManager.registerListener(this , stepCounter ,SensorManager.SENSOR_DELAY_FASTEST)
+        sensorManager.registerListener(this , stepCounter ,100)
     }
 
     override fun onStop() {

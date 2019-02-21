@@ -3,7 +3,7 @@
           package="com.example.hp.steptracker">
 
     <uses-feature android:name="android.hardware.sensor.stepcounter" android:required="true"/>
-    <uses-feature android:name="android.hardware.Sensor" android:required="true"/>
+    <uses-feature android:name="android.hardware.sensor.stepdetector" android:required="true"/>
 
     <application
             android:allowBackup="true"
