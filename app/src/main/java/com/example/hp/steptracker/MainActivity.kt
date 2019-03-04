@@ -44,11 +44,13 @@ class MainActivity : AppCompatActivity() , SensorEventListener {
     override fun onSensorChanged(event: SensorEvent?) {
         event?.let {
 
-//          var values =event.values
-//
-//            if(values[0]==1)
-            totalsteps= totalsteps+1
-            stepCount.setText(totalsteps.toString())
+          val values =it.values
+
+            if(values.get(0).equals(1)) {
+                totalsteps = totalsteps + 1
+                stepCount.setText("${totalsteps}")
+            }
+
 
         }
     }
