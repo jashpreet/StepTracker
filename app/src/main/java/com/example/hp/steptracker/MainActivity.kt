@@ -7,6 +7,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() , SensorEventListener {
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() , SensorEventListener {
         getSystemService(Context.SENSOR_SERVICE) as SensorManager
     }
 
-
+   var tvvalues :String=""
     var totalsteps=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,9 +47,12 @@ class MainActivity : AppCompatActivity() , SensorEventListener {
 
           val values =it.values
 
-            if(values.get(0).equals(1)) {
+            tvvalues+=values[0]
+            tv.setText(tvvalues)
+
+            if(values[0].equals(1.0)) {
                 totalsteps = totalsteps + 1
-                stepCount.setText("${totalsteps}")
+                stepCount.setText(totalsteps)
             }
 
 
